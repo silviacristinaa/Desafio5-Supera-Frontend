@@ -58,29 +58,30 @@ function App() {
 
   return (
     <div class="header">
-      { allowed ?
-        <main className="container">
+      {allowed ?
+        <main>
           <form>
-            <div class="content">
-              <div class="blc">
-                <label>Data de início
-                  <input onChange={handleChangeInitialDate} type="date" value={initialDate} />
-                </label>
+            <div class="form-row">
+              <div class="form-group col-md-2">
+                <label for="inputInitialDate">Data de início</label>
+                <input type="date" class="form-control" id="inputInitialDate"
+                  onChange={handleChangeInitialDate} value={initialDate} />
               </div>
-              <div class="blc">
-                <label>Data de Fim
-                  <input onChange={handleChangeFinalDate} type="date" value={finalDate} />
-                </label>
+              <div class="form-group col-md-2">
+                <label for="inputFinalDate">Data de Fim</label>
+                <input type="date" class="form-control" id="inputFinalDate"
+                  onChange={handleChangeFinalDate} value={finalDate} />
               </div>
-              <div class="blc">
-                <label>Nome operador transacionado
-                  <input onChange={handleChangeName} type="text" value={transactionOperatorName} />
-                </label>
+              <div class="form-group col-md-4">
+                <label for="inputName">Nome operador transacionado</label>
+                <input onChange={handleChangeName} type="text" value={transactionOperatorName}
+                  class="form-control" id="inputName" />
               </div>
             </div>
+
           </form>
 
-          <button onClick={handleSearch} className="btn btn-primary">
+          <button onClick={handleSearch} className="btn btn-primary button">
             Pesquisar
           </button>
 
@@ -89,8 +90,11 @@ function App() {
 
               <div>
                 <div className="row mt-5">
-                  <p>Saldo total: R$ {transferData.totalBalance.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
-                  <p>Saldo no período: R$ {transferData.balanceInPeriod.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+                  <div className="paragraph">
+                    <p>Saldo total: {transferData.totalBalance.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
+                    <p>Saldo no período: {transferData.balanceInPeriod.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</p>
+                  </div>
+
                   <table className="table table-bordered table-striped " >
                     <thead>
                       <tr>
@@ -106,7 +110,7 @@ function App() {
                           transfer =>
                             <tr key={transfer.id}>
                               <td> {Moment(transfer.transferDate).format('DD/MM/YYYY')}</td>
-                              <td> {transfer.value.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
+                              <td> {transfer.value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</td>
                               <td> {transfer.type}</td>
                               <td> {transfer.transactionOperatorName}</td>
                             </tr>
@@ -118,11 +122,11 @@ function App() {
               </div>
             ) : null
           }
-        </main> : 
-          <main className="container bg-light -5">
-            <h2>PASSE NA URL O NÚMERO DA SUA CONTA BANCÁRIA</h2>
-            <h3 className="lead">Exemplo: <a href="http://localhost:3000/1">http://localhost:3000/1 </a></h3>
-          </main>
+        </main> :
+        <main className="container bg-light -5">
+          <h2>PASSE NA URL O NÚMERO DA SUA CONTA BANCÁRIA</h2>
+          <h3 className="lead">Exemplo: <a href="http://localhost:3000/1">http://localhost:3000/1 </a></h3>
+        </main>
       }
     </div>
   );
