@@ -1,0 +1,6 @@
+form .content { width:100%; }
+form .content .blc { position:relative;float:left;width:33.33333%;}
+label { display:block; }
+input[type="text"] { display:block; }
+
+.header { margin-top: 100px;}
