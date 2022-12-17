@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from 'react';
 import Moment from 'moment';
+import Pagination from "@mui/material/Pagination";
 
 function App() {
   const [accountId, setAccountId] = useState(null);
@@ -9,6 +10,10 @@ function App() {
   const [transactionOperatorName, setTransactionOperatorName] = useState("");
   const [transferData, setTransferData] = useState();
   const [allowed, setAllowed] = useState(false);
+
+  const [paginationPage, setPaginationPage] = useState(1);
+  const [count, setCount] = useState(1);
+  const [pageSize, setPageSize] = useState(1);
 
   function isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
@@ -41,19 +46,28 @@ function App() {
     setInitialDate(event.target.value);
   }
 
-  const handleSearch = () => {
+  const handlePageChange = (event, value) => {
+    search(value - 1);
+  };
+
+  function search(value) {
     let newInitialDate = initialDate ? initialDate + "T00:00:00" : "";
     let newFinalDate = finalDate ? finalDate + "T23:59:59" : "";
 
-    fetch(`http://localhost:8080/api/transfers/${accountId}/?initialDate=${newInitialDate}&finalDate=${newFinalDate}&transactionOperatorName=${transactionOperatorName}`)
+    fetch(`http://localhost:8080/api/transfers/${accountId}/?initialDate=${newInitialDate}&finalDate=${newFinalDate}&transactionOperatorName=${transactionOperatorName}&page=${value}&size=${pageSize}`)
       .then((response) => {
         if (response.status === 200) {
           return response.json();
         }
       }).then((data) => {
         setTransferData(data);
-        console.log('data ====>', data);
+        setPaginationPage(data.transferResponseDataDto.number + 1);
+        setCount(data.transferResponseDataDto.totalPages);
       });
+  }
+
+  const handleSearch = () => {
+    search(0);
   }
 
   return (
@@ -118,6 +132,17 @@ function App() {
                       }
                     </tbody>
                   </table>
+
+                  <Pagination
+                    color="primary"
+                    className="my-3"
+                    count={count}
+                    page={paginationPage}
+                    siblingCount={1}
+                    boundaryCount={1}
+                    variant="outlined"
+                    onChange={handlePageChange}
+                  />
                 </div>
               </div>
             ) : null
