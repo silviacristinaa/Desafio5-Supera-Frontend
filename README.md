@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Processo Seletivo Java - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3>Sobre:</h3>
 
-## Available Scripts
+Projeto realizado para o processo seletivo Java da Supera. 
 
-In the project directory, you can run:
+Para acessar a busca com filtros, acesse a url http://localhost:3000/1, caso acesse com a url http://localhost:3000, irá para a tela de aviso pedindo para acessar passando o número da conta bancária.
 
-### `npm start`
+<h3>Pré-requisitos com Docker:</h3>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Docker instalado
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h3>Como executar:</h3>
 
-### `npm test`
+- execute o comando:
+docker run -p 3000:80 --name frontend silviacristinaa:desafio5-supera-frontend:latest
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h3>Pré-requisitos sem Docker:</h3>
 
-### `npm run build`
+- npm
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h3>Para clonar o repositório:</h3> 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- git clone https://github.com/silviacristinaa/Desafio5-Supera-Frontend.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h3>Como executar:</h3>
 
-### `npm run eject`
+- Será executado na porta 3000
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Dentro da pasta do projeto, execute o comando: 
+npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<h3>Tecnologias Utilizadas:</h3>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ - React
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<h3>Autor:</h3>
 
-## Learn More
+<a href="https://www.linkedin.com/in/silvia-cristina-alexandre">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/114493777?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Silvia Cristina Alexandre</b></sub></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[![Linkedin Badge](https://img.shields.io/badge/-Silvia-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/silvia-cristina-alexandre)](https://www.linkedin.com/in/silvia-cristina-alexandre)
+[![Gmail Badge](https://img.shields.io/badge/-silviacristinaalexandre1@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:silviacristinaalexandre1@gmail.com)](mailto:silviacristinaalexandre1@gmail.com)
+<hr>
