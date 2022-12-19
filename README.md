@@ -13,7 +13,7 @@ Para acessar a busca com filtros, acesse a url http://localhost:3000/1, caso ace
 <h3>Como executar:</h3>
 
 - execute o comando:
-docker run -p 3000:80 --name frontend silviacristinaa:desafio5-supera-frontend:latest
+docker run -p 3000:80 --name frontend silviacristinaa/desafio5-supera-frontend:latest
 
 <h3>Pré-requisitos sem Docker:</h3>
 
